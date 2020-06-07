@@ -15,8 +15,8 @@ import dev.olog.domain.MediaId
 import dev.olog.domain.MediaIdCategory
 import dev.olog.domain.interactor.SleepTimerUseCase
 import dev.olog.domain.schedulers.Schedulers
-import dev.olog.intents.Classes
-import dev.olog.intents.MusicServiceCustomAction
+import dev.olog.core.Classes
+import dev.olog.core.MusicServiceCustomAction
 import dev.olog.feature.service.music.helper.CarHelper
 import dev.olog.feature.service.music.helper.CarHelper.CONTENT_STYLE_BROWSABLE_HINT
 import dev.olog.feature.service.music.helper.CarHelper.CONTENT_STYLE_LIST_ITEM_HINT_VALUE

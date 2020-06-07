@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.core.text.parseAsHtml
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dev.olog.domain.MediaId
-import dev.olog.intents.AppConstants
+import dev.olog.core.AppConstants
 import dev.olog.feature.presentation.base.model.PresentationId
 import dev.olog.presentation.R
 import dev.olog.presentation.dialogs.BaseDialog

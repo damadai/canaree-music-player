@@ -4,9 +4,9 @@ import dev.olog.feature.app.shortcuts.ShortcutsActivity
 import dev.olog.feature.service.floating.FloatingWindowService
 import dev.olog.feature.service.music.MusicService
 import dev.olog.msc.appwidgets.WidgetColored
-import dev.olog.presentation.main.MainActivity
+import dev.olog.feature.entry.MainActivity
 import dev.olog.presentation.playlist.chooser.PlaylistChooserActivity
-import dev.olog.intents.Classes
+import dev.olog.core.Classes
 import org.junit.Assert
 import org.junit.Test
 

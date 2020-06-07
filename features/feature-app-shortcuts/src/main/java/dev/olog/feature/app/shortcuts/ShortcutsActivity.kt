@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import dev.olog.intents.Classes
+import dev.olog.core.Classes
 
 class ShortcutsActivity : AppCompatActivity() {
 
@@ -23,7 +23,7 @@ class ShortcutsActivity : AppCompatActivity() {
         val action = intent.action ?: return
 
         // forwards action to music service
-        val serviceIntent = Intent(this, Class.forName(Classes.SERVICE_MUSIC))
+        val serviceIntent = Intent(this, Class.forName(dev.olog.core.Classes.SERVICE_MUSIC))
         serviceIntent.action = action
         ContextCompat.startForegroundService(this, serviceIntent)
     }

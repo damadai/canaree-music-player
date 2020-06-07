@@ -10,9 +10,9 @@ android {
 dependencies {
     lintChecks(project(":lint"))
 
+    implementation(project(":core"))
     implementation(project(":domain"))
     implementation(project(":libraries:lib-image-loader"))
-    implementation(project(":intents"))
     implementation(project(":shared"))
 
     implementation(Libraries.kotlin)

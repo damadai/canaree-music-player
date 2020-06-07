@@ -24,10 +24,6 @@
 - Contains interactors (business use-cases)
 - [build.gradle](https://github.com/ologe/canaree-music-player/blob/master/core/build.gradle)
 
-#### `:presentation`
-- Self explanatory
-- [build.gradle](https://github.com/ologe/canaree-music-player/blob/master/presentation/build.gradle)
-
 #### `:service-music`
 - Self explanatory
 - [build.gradle](https://github.com/ologe/canaree-music-player/blob/master/service-music/build.gradle)
@@ -68,10 +64,6 @@
 - [build.gradle](https://github.com/ologe/canaree-music-player/blob/master/jaudiotagger/build.gradle) 
 
 ## Utils
-
-#### `:intents`
-- Contains common actions and constants for communication between modules
-- [build.gradle](https://github.com/ologe/canaree-music-player/blob/master/intents/build.gradle)
 
 #### `:prefs-keys`
 - Contains shared preferences keys, using a separate module for communication between modules

@@ -2,7 +2,6 @@ package dev.olog.presentation.playlist.chooser
 
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import dev.olog.feature.app.shortcuts.AppShortcuts
 import dev.olog.domain.schedulers.Schedulers
 import dev.olog.presentation.R
 import dev.olog.feature.presentation.base.adapter.DataBoundViewHolder
@@ -32,11 +31,11 @@ class PlaylistChooserActivityAdapter(
         MaterialAlertDialogBuilder(activity)
             .setTitle(R.string.playlist_chooser_dialog_title)
             .setMessage(activity.getString(R.string.playlist_chooser_dialog_message, item.title))
-            .setPositiveButton(R.string.popup_positive_ok) { _, _ ->
-                AppShortcuts.instance(activity, schedulers)
-                    .addDetailShortcut(item.mediaId.toDomain(), item.title)
-                activity.finish()
-            }
+//            .setPositiveButton(R.string.popup_positive_ok) { _, _ -> TODO
+//                AppShortcuts.instance(activity, schedulers)
+//                    .addDetailShortcut(item.mediaId.toDomain(), item.title)
+//                activity.finish()
+//            }
             .setNegativeButton(R.string.popup_negative_no, null)
             .show()
     }

@@ -14,7 +14,7 @@ internal class SpecialThanksPresenter(
             R.layout.item_special_thanks,
             headerId("folder img id"),
             context.getString(R.string.about_icon_made_by_x_from_y, "Freepik", "www.flaticon.com "),
-            R.drawable.vd_folder
+            R.drawable.vd_folder_custom
         ), // folder icon
 
         SpecialThanksModel(
@@ -35,7 +35,7 @@ internal class SpecialThanksPresenter(
             R.layout.item_special_thanks,
             headerId("album img id"),
             context.getString(R.string.about_icon_made_by_x_from_y, "Those Icons", "www.flaticon.com "),
-            R.drawable.vd_album
+            R.drawable.vd_album_custom
         ), // album icon
 
         SpecialThanksModel(

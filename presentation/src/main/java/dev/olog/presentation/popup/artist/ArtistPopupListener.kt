@@ -3,7 +3,6 @@ package dev.olog.presentation.popup.artist
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.FragmentActivity
-import dev.olog.feature.app.shortcuts.AppShortcuts
 import dev.olog.domain.MediaId
 import dev.olog.domain.entity.track.Artist
 import dev.olog.domain.entity.track.Song
@@ -16,7 +15,6 @@ import dev.olog.presentation.*
 import dev.olog.navigation.Navigator
 import dev.olog.presentation.popup.AbsPopup
 import dev.olog.presentation.popup.AbsPopupListener
-import java.lang.ref.WeakReference
 import javax.inject.Inject
 
 internal class ArtistPopupListener @Inject constructor(
@@ -71,8 +69,8 @@ internal class ArtistPopupListener @Inject constructor(
             R.id.viewArtist -> viewArtist(navigator, song!!.artistPresentationId)
             R.id.share -> share(activity, song!!)
             R.id.setRingtone -> setRingtone(navigator, getMediaId(), song!!)
-            R.id.addHomeScreen -> AppShortcuts.instance(activity, schedulers)
-                .addDetailShortcut(getMediaId().toDomain(), artist.name)
+//            R.id.addHomeScreen -> AppShortcuts.instance(activity, schedulers) TODO
+//                .addDetailShortcut(getMediaId().toDomain(), artist.name)
         }
 
 

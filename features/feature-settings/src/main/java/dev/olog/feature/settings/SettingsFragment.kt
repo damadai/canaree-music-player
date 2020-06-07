@@ -82,7 +82,7 @@ internal class SettingsFragment : PreferenceFragmentCompat(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val list = view.findViewById<RecyclerView>(R.id.recycler_view)
-        list.layoutManager = OverScrollLinearLayoutManager(list)
+        list.layoutManager = OverScrollLinearLayoutManager(requireContext())
     }
 
     override fun onResume() {

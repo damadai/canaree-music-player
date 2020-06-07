@@ -3,7 +3,7 @@ package dev.olog.presentation.offlinelyrics
 import dev.olog.domain.gateway.OfflineLyricsGateway
 import dev.olog.domain.prefs.TutorialPreferenceGateway
 import dev.olog.domain.schedulers.Schedulers
-import dev.olog.intents.AppConstants
+import dev.olog.core.AppConstants
 import dev.olog.lib.offline.lyrics.BaseOfflineLyricsPresenter
 import dev.olog.lib.offline.lyrics.domain.InsertOfflineLyricsUseCase
 import dev.olog.lib.offline.lyrics.domain.ObserveOfflineLyricsUseCase

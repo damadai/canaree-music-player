@@ -15,6 +15,7 @@ dependencies {
     implementation(Libraries.Dagger.core)
 
     api(project(":features:feature-app-shortcuts"))
+    api(project(":features:feature-entry"))
     api(project(":features:feature-library"))
     api(project(":features:feature-search"))
     api(project(":features:feature-detail"))
@@ -29,5 +30,4 @@ dependencies {
 
     api(project(":features:feature-service-music"))
     api(project(":features:feature-service-floating"))
-    api(project(":presentation"))
 }

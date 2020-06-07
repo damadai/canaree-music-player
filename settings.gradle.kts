@@ -48,9 +48,6 @@ include(":prefs-keys")
 include(":lint")
 include(":test-shared")
 
-// remove
-include(":intents")
-
 
 val extensionAware = gradle as ExtensionAware
 extensionAware.extra["exoplayerRoot"] = "/Users/eugeniuolog/AndroidStudioProjects/ExoPlayer"

@@ -81,7 +81,6 @@ dependencies {
     implementation(project(":prefs-keys"))
     implementation(project(":shared-android"))
 
-    implementation(project(":intents"))
     implementation(project(":shared"))
 
     implementation(Libraries.kotlin)

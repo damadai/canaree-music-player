@@ -37,11 +37,23 @@ private const val CATEGORY_PODCAST_ARTIST_VISIBILITY = "$TAG.CATEGORY_PODCAST_AR
 private const val BOTTOM_VIEW_LAST_PAGE = "$TAG.BOTTOM_VIEW_3"
 
 private const val LIBRARY_LAST_PAGE = "$TAG.LIBRARY_PAGE"
+private const val FIRST_ACCESS = "$TAG.FIRST_ACCESS"
 
 class CommonPreferences @Inject constructor(
     private val context: Context,
     private val preferences: SharedPreferences
 ) {
+
+    fun isFirstAccess(): Boolean {
+        // TODO separate
+        val isFirstAccess = preferences.getBoolean(FIRST_ACCESS, true)
+
+        if (isFirstAccess) {
+            preferences.edit { putBoolean(FIRST_ACCESS, false) }
+        }
+
+        return isFirstAccess
+    }
 
     fun getLibraryCategories(): List<LibraryCategoryBehavior> {
         return listOf(

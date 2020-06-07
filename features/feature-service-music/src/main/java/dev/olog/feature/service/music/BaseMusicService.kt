@@ -11,8 +11,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ServiceLifecycleDispatcher
 import androidx.media.MediaBrowserServiceCompat
 import dev.olog.domain.C.ACTION_STOP_SLEEP_END
-import dev.olog.intents.MusicServiceAction
-import dev.olog.intents.MusicServiceCustomAction
+import dev.olog.core.MusicServiceAction
+import dev.olog.core.MusicServiceCustomAction
 import dev.olog.feature.service.music.interfaces.IServiceLifecycleController
 import timber.log.Timber
 

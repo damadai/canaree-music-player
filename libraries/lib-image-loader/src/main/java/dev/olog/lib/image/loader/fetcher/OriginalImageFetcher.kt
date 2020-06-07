@@ -56,8 +56,7 @@ object OriginalImageFetcher {
                 }
             }
         } catch (ex: IOException) {
-            Timber.w(ex)
-            ex.printStackTrace()
+//            Timber.w(ex) // TODO needed??
         }
         yield()
 

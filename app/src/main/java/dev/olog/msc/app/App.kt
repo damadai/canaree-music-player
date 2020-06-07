@@ -55,8 +55,8 @@ class App : DaggerApplication() {
     }
 
     private fun initializeConstants() {
-        // TODO delegate via multibindigs
-        PreferenceManager.setDefaultValues(this, R.xml.prefs, false)
+        // TODO delegate via multibindigs to :feature-settings
+//        PreferenceManager.setDefaultValues(this, R.xml.prefs, false)
     }
 
     private fun initializeTimber() {

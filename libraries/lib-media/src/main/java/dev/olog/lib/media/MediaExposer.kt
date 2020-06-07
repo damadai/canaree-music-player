@@ -11,7 +11,7 @@ import dev.olog.shared.coroutines.MainScope
 import dev.olog.shared.coroutines.autoDisposeJob
 import dev.olog.domain.MediaId
 import dev.olog.domain.schedulers.Schedulers
-import dev.olog.intents.Classes
+import dev.olog.core.Classes
 import dev.olog.lib.media.connection.IMediaConnectionCallback
 import dev.olog.lib.media.connection.MusicServiceConnection
 import dev.olog.lib.media.connection.MusicServiceConnectionState

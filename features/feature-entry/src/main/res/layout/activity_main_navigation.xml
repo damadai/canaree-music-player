@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <dev.olog.feature.entry.widgets.SlidingPanelFade
+        android:id="@+id/slidingPanelFade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <dev.olog.feature.entry.widgets.BottomSheet
+        android:id="@+id/slidingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/sliding_panel_peek_plus_navigation"
+        android:clipChildren="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/playerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/miniPlayerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </dev.olog.feature.entry.widgets.BottomSheet>
+
+    <LinearLayout
+        android:id="@+id/bottomWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:elevation="8dp"
+        android:background="?colorSurface">
+
+        <dev.olog.feature.presentation.base.widget.DottedSeparator
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+        <dev.olog.feature.entry.widgets.CanareeBottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_navigation_height"
+            android:layout_gravity="bottom"
+            app:elevation="0dp"
+            app:itemIconSize="22dp"
+            app:menu="@menu/bottom_navigation"
+            android:background="@android:color/transparent"/>
+
+
+    </LinearLayout>
+
+</merge>

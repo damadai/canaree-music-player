@@ -15,7 +15,7 @@ dependencies {
     implementation(project(":core"))
 
     implementation(project(":navigation"))
-    implementation(project(":features:feature-app-shortcuts"))
+    implementation(project(":features:feature-entry"))
     implementation(project(":features:feature-presentation-base"))
 
     // TODO temp
@@ -28,7 +28,6 @@ dependencies {
     implementation(project(":prefs-keys"))
     implementation(project(":libraries:lib-media"))
     implementation(project(":libraries:lib-offline-lyrics"))
-    implementation(project(":intents"))
     implementation(project(":shared"))
     implementation(project(":libraries:lib-equalizer"))
     implementation(project(":libraries:lib-audio-tagger"))

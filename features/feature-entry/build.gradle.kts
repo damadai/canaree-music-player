@@ -16,6 +16,7 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(project(":libraries:lib-media"))
+    implementation(project(":libraries:lib-analytics"))
 
     implementation(project(":navigation"))
     implementation(project(":features:feature-presentation-base"))
@@ -39,6 +40,9 @@ dependencies {
     implementation(Libraries.X.constraintLayout)
     implementation(Libraries.X.preference)
     implementation(Libraries.X.material)
+    implementation(Libraries.X.media)
+
+    implementation(Libraries.X.Lifecycle.java8)
 
     implementation(Libraries.Utils.scrollHelper)
 

@@ -6,13 +6,14 @@ import android.widget.Toast
 import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
+import dev.olog.core.Classes
+import dev.olog.core.MusicServiceAction
+import dev.olog.core.MusicServiceCustomAction
 import dev.olog.shared.coroutines.fireAndForget
 import dev.olog.domain.MediaId
 import dev.olog.domain.schedulers.Schedulers
 import dev.olog.lib.image.loader.getCachedBitmap
-import dev.olog.intents.Classes
-import dev.olog.intents.MusicServiceAction
-import dev.olog.intents.MusicServiceCustomAction
+import dev.olog.core.Shortcuts
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.withContext
 
@@ -22,12 +23,12 @@ class AppShortcutsImp(
 ) {
 
     init {
-        ShortcutManagerCompat.removeAllDynamicShortcuts(context)
-        ShortcutManagerCompat.addDynamicShortcuts(
-            context, listOf(
-                playlistChooser(), search(), shuffle(), play()
-            )
-        )
+//        ShortcutManagerCompat.removeAllDynamicShortcuts(context) TODO restore
+//        ShortcutManagerCompat.addDynamicShortcuts(
+//            context, listOf(
+//                playlistChooser(), search(), shuffle(), play()
+//            )
+//        )
     }
 
     fun addDetailShortcut(mediaId: MediaId, title: String) {

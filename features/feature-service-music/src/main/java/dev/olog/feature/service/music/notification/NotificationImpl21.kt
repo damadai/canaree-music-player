@@ -22,8 +22,8 @@ import dev.olog.domain.MediaIdCategory.SPOTIFY_TRACK
 import dev.olog.domain.schedulers.Schedulers
 import dev.olog.lib.image.loader.getBitmap
 import dev.olog.core.dagger.ServiceLifecycle
-import dev.olog.intents.AppConstants
-import dev.olog.intents.Classes
+import dev.olog.core.AppConstants
+import dev.olog.core.Classes
 import dev.olog.feature.service.music.R
 import dev.olog.feature.service.music.interfaces.INotification
 import dev.olog.feature.service.music.model.MusicNotificationState
