@@ -33,12 +33,12 @@ import Libraries.Versions.scroll_helper
 import Libraries.Versions.sql_content_resolver
 import Libraries.Versions.tap_target_view
 
-const val kotlinVersion = "1.3.70"
+const val kotlinVersion = "1.3.72"
 
 object BuildPlugins {
 
     object Versions {
-        const val buildToolsVersion = "4.0.0-beta04"
+        const val buildToolsVersion = "4.0.0"
         const val gms = "4.3.3"
         const val fabric = "1.31.2"
     }
