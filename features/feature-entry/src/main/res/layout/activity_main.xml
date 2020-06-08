@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootView"
     android:clipChildren="false">
 
@@ -11,6 +11,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <include layout="@layout/activity_main_navigation"/>
+    <dev.olog.feature.entry.widgets.SlidingPanelFade
+        android:id="@+id/slidingPanelFade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <dev.olog.feature.entry.widgets.BottomSheet
+        android:id="@+id/slidingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="@dimen/sliding_panel_peek_plus_navigation"
+        android:clipChildren="false"
+        app:gestureInsetBottomIgnored="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/playerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/miniPlayerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </dev.olog.feature.entry.widgets.BottomSheet>
+
+    <dev.olog.feature.entry.widgets.CanareeBottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_navigation_height"
+        android:layout_gravity="bottom"
+        app:elevation="8dp"
+        app:itemIconSize="22dp"
+        app:menu="@menu/bottom_navigation"
+        android:background="?colorSurface"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

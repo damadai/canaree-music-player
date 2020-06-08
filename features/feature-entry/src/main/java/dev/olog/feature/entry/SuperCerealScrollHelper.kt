@@ -12,14 +12,14 @@ import dev.olog.navigation.screens.FragmentScreen
 internal class SuperCerealScrollHelper(
     private val activity: FragmentActivity
 ) : ScrollHelper(
-    activity,
-    false,
-    false,
-    activity.dip(R.dimen.toolbar),
-    activity.dip(R.dimen.tab),
-    activity.dip(R.dimen.sliding_panel_peek),
-    activity.dip(R.dimen.bottom_navigation_height),
-    true
+    activity = activity,
+    fullScrollTop = false,
+    fullScrollBottom = false,
+    toolbarHeight = activity.dip(R.dimen.toolbar),
+    tabLayoutHeight = activity.dip(R.dimen.tab),
+    bottomSheetHeight = activity.dip(R.dimen.sliding_panel_peek),
+    bottomNavigationHeight = activity.dip(R.dimen.bottom_navigation_height),
+    restoreState = true
 ) {
 
 //    override fun applyInsetsToList(fragment: Fragment, list: RecyclerView, toolbar: View?, tabLayout: View?) {
@@ -42,7 +42,7 @@ internal class SuperCerealScrollHelper(
 //    }
 
     override fun findBottomNavigation(): View? {
-        return activity.findViewById(R.id.bottomWrapper)
+        return activity.findViewById(R.id.bottomNavigation)
     }
 
     override fun findBottomSheet(): View? {
@@ -50,14 +50,14 @@ internal class SuperCerealScrollHelper(
     }
 
     override fun findFab(fragment: Fragment): View? {
-        return fragment.view?.findViewById(R.id.fab)
+        return fragment.requireView().findViewById(R.id.fab)
     }
 
     override fun findRecyclerView(fragment: Fragment): RecyclerView? {
-        var recyclerView = fragment.view?.findViewByIdNotRecursive<RecyclerView>(R.id.list)
+        var recyclerView = fragment.requireView().findViewByIdNotRecursive<RecyclerView>(R.id.list)
         if (recyclerView == null && fragment.tag == FragmentScreen.SETTINGS.tag) {
             // preferences fragment has and internal list called `recycler_view`
-            recyclerView = fragment.view?.findViewById(R.id.recycler_view)
+            recyclerView = fragment.requireView().findViewByIdNotRecursive(R.id.recycler_view)
         }
         return recyclerView
     }

@@ -82,14 +82,16 @@ internal class CanareeBottomNavigationView(
     }
 
     private fun Int.toBottomNavigationPage(): BottomNavigationPage = when (this) {
+        R.id.navigation_home -> BottomNavigationPage.LIBRARY
         R.id.navigation_library -> BottomNavigationPage.LIBRARY
         R.id.navigation_search -> BottomNavigationPage.SEARCH
+        R.id.navigation_playlists -> BottomNavigationPage.LIBRARY
         R.id.navigation_queue -> BottomNavigationPage.QUEUE
         else -> throw IllegalArgumentException("invalid menu id")
     }
 
     private fun BottomNavigationPage.toMenuId(): Int = when (this) {
-        BottomNavigationPage.LIBRARY -> R.id.navigation_library
+        BottomNavigationPage.LIBRARY -> R.id.navigation_home
         BottomNavigationPage.SEARCH -> R.id.navigation_search
         BottomNavigationPage.QUEUE -> R.id.navigation_queue
     }

@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/navigation_library"
-            android:title="@string/category_header"
-            android:icon="@drawable/vd_home_alt_selector"/>
-        <item
-            android:id="@+id/navigation_search"
-            android:title="@string/common_search"
-            android:icon="@drawable/vd_search_alt_selector"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/vd_home"
+        android:title="Home" />
 
-        <item
-            android:id="@+id/navigation_queue"
-            android:title="@string/playing_queue"
-            android:icon="@drawable/vd_queue_alt_selector"/>
+<!--    todo change icon ??-->
+    <item
+        android:id="@+id/navigation_library"
+        android:icon="@drawable/vd_audiotrack"
+        android:title="Library" />
 
-    </group>
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/vd_search_alt"
+        android:title="@string/common_search" />
+
+    <item
+        android:id="@+id/navigation_playlists"
+        android:icon="@drawable/vd_playlist_add"
+        android:title="Playlists" />
+
+    <item
+        android:id="@+id/navigation_queue"
+        android:icon="@drawable/vd_queue_alt"
+        android:title="Queue" />
 </menu>
