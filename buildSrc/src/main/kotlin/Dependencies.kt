@@ -79,7 +79,7 @@ object Libraries {
     object Versions {
 
         //    core
-        internal const val coroutines = "1.3.5"
+        internal const val coroutines = "1.3.7"
         internal const val dagger = "2.27"
 
         //    android x
