@@ -54,15 +54,6 @@
         <item>@string/common_related_artists</item>
     </string-array>
 
-
-
-    <!--library categories-->
-    <string name="prefs_library_categories_title">Thể loại thư viện</string>
-    <string name="prefs_library_categories_summary">Cấu hình mức độ hiển thị và thứ tự của danh mục thư viện</string>
-
-    <!--podcast categories-->
-    <string name="prefs_podcast_library_categories_title">Thể loại podcast</string>
-
     <!--blacklist-->
     <string name="prefs_blacklist_title">Danh sách đen</string>
     <string name="prefs_blacklist_summary">Ẩn thư mục thư viện</string>
@@ -73,9 +64,6 @@
     <string name="prefs_folder_tree_view_title">Chế độ xem phân cấp thư mục</string>
     <string name="prefs_folder_tree_view_summary_off" translatable="false">@string/common_disabled</string>
     <string name="prefs_folder_tree_view_summary_on" translatable="false">@string/common_enabled</string>
-
-    <string name="prefs_show_podcasts_title">Hiển thị podcast</string>
-    <string name="prefs_show_podcasts_summary">Hiển thị thẻ podcast trong thư viện</string>
 
     <!--used equalizer-->
     <string name="prefs_used_equalizer_title">Bộ cân bằng</string>

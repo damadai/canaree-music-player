@@ -20,19 +20,15 @@ import com.afollestad.materialdialogs.color.ColorCallback
 import com.afollestad.materialdialogs.color.colorChooser
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.android.support.AndroidSupportInjection
-import dev.olog.domain.MediaIdCategory
 import dev.olog.domain.prefs.TutorialPreferenceGateway
 import dev.olog.feature.settings.blacklist.BlacklistFragment
-import dev.olog.feature.settings.categories.LibraryCategoriesFragment
 import dev.olog.feature.settings.last.fm.LastFmCredentialsFragment
 import dev.olog.scrollhelper.layoutmanagers.OverScrollLinearLayoutManager
 import dev.olog.shared.android.dark.mode.isDarkMode
 import dev.olog.feature.presentation.base.extensions.launchWhenResumed
 import dev.olog.shared.android.extensions.themeManager
 import dev.olog.feature.presentation.base.extensions.toast
-import dev.olog.feature.presentation.base.prefs.CommonPreferences
 import dev.olog.lib.image.loader.ImageLoader
-import dev.olog.navigation.screens.LibraryPage
 import javax.inject.Inject
 
 @Keep
@@ -40,19 +36,9 @@ internal class SettingsFragment : PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener,
     ColorCallback{
 
-    companion object {
-        @JvmStatic
-        val TAG = SettingsFragment::class.java.name
-    }
-
     @Inject
     internal lateinit var tutorialPrefsUseCase: TutorialPreferenceGateway
 
-    @Inject
-    internal lateinit var preferences: CommonPreferences
-
-    private lateinit var libraryCategories: Preference
-    private lateinit var podcastCategories: Preference
     private lateinit var blacklist: Preference
     private lateinit var iconShape: Preference
     private lateinit var deleteCache: Preference
@@ -68,8 +54,6 @@ internal class SettingsFragment : PreferenceFragmentCompat(),
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.prefs, rootKey)
-        libraryCategories = preferenceScreen.findPreference(getString(R.string.prefs_library_categories_key))!!
-        podcastCategories = preferenceScreen.findPreference(getString(R.string.prefs_podcast_library_categories_key))!!
         blacklist = preferenceScreen.findPreference(getString(R.string.prefs_blacklist_key))!!
         iconShape = preferenceScreen.findPreference(getString(R.string.prefs_icon_shape_key))!!
         deleteCache = preferenceScreen.findPreference(getString(R.string.prefs_delete_cached_images_key))!!
@@ -89,16 +73,6 @@ internal class SettingsFragment : PreferenceFragmentCompat(),
         super.onResume()
         preferenceManager.sharedPreferences.registerOnSharedPreferenceChangeListener(this)
 
-        libraryCategories.setOnPreferenceClickListener {
-            LibraryCategoriesFragment.newInstance(MediaIdCategory.SONGS)
-                .show(requireActivity().supportFragmentManager, LibraryCategoriesFragment.TAG)
-            true
-        }
-        podcastCategories.setOnPreferenceClickListener {
-            LibraryCategoriesFragment.newInstance(MediaIdCategory.PODCASTS)
-                .show(requireActivity().supportFragmentManager, LibraryCategoriesFragment.TAG)
-            true
-        }
         blacklist.setOnPreferenceClickListener {
             requireActivity().supportFragmentManager.commit {
                 setReorderingAllowed(true)
@@ -142,8 +116,6 @@ internal class SettingsFragment : PreferenceFragmentCompat(),
     override fun onPause() {
         super.onPause()
         preferenceManager.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
-        libraryCategories.onPreferenceClickListener = null
-        podcastCategories.onPreferenceClickListener = null
         blacklist.onPreferenceClickListener = null
         deleteCache.onPreferenceClickListener = null
         lastFmCredentials.onPreferenceClickListener = null
@@ -163,10 +135,6 @@ internal class SettingsFragment : PreferenceFragmentCompat(),
             getString(R.string.prefs_mini_player_appearance_key),
             getString(R.string.prefs_quick_action_key),
             getString(R.string.prefs_folder_tree_view_key) -> {
-                requireActivity().recreate()
-            }
-            getString(R.string.prefs_show_podcasts_key) -> {
-                preferences.setLibraryPage(LibraryPage.TRACKS)
                 requireActivity().recreate()
             }
         }

@@ -54,15 +54,6 @@
         <item>@string/common_related_artists</item>
     </string-array>
 
-
-
-    <!--library categories-->
-    <string name="prefs_library_categories_title">संग्रह वर्गीकरण</string>
-    <string name="prefs_library_categories_summary">संग्रह वर्गीकरण का दिखना और क्रम बदलें</string>
-
-    <!--podcast categories-->
-    <string name="prefs_podcast_library_categories_title">पॉडकास्ट वर्गीकरण</string>
-
     <!--blacklist-->
     <string name="prefs_blacklist_title">काली सूची</string>
     <string name="prefs_blacklist_summary">Ocultar carpetas de la biblioteca</string>
@@ -73,9 +64,6 @@
     <string name="prefs_folder_tree_view_title">फोल्डर वर्गीकरण दृश्य</string>
     <string name="prefs_folder_tree_view_summary_off" translatable="false">@string/common_disabled</string>
     <string name="prefs_folder_tree_view_summary_on" translatable="false">@string/common_enabled</string>
-
-    <string name="prefs_show_podcasts_title">पॉडकास्ट देखें</string>
-    <string name="prefs_show_podcasts_summary">संग्रह में पॉडकास्ट देखें</string>
 
     <!--used equalizer-->
     <string name="prefs_used_equalizer_title">तुल्यकारक</string>

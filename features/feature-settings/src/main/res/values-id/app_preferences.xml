@@ -13,11 +13,7 @@
     <!--detail visible sections-->
     <string name="prefs_detail_sections_title">Tampilkan bagian</string>
     <string name="prefs_detail_sections_summary">Mengkonfigurasi bagian terlihat dalam tampilan detail</string>
-    <!--library categories-->
-    <string name="prefs_library_categories_title">Kategori pustaka</string>
-    <string name="prefs_library_categories_summary">Mengatur tampilan dan susunan</string>
-    <!--podcast categories-->
-    <string name="prefs_podcast_library_categories_title">Kategori podcast</string>
+
     <!--blacklist-->
     <string name="prefs_blacklist_title">Daftar hitam</string>
     <string name="prefs_blacklist_summary">Sembunyikan folder dari pustaka</string>
@@ -25,8 +21,6 @@
     <string name="prefs_blacklist_error">Tidak bisa memblokir semua folder</string>
     <!--folder tree-->
     <string name="prefs_folder_tree_view_title">Tampilan folder hirarki</string>
-    <string name="prefs_show_podcasts_title">Tampilkan podcast</string>
-    <string name="prefs_show_podcasts_summary">Tampilkan tab podcast di pustaka</string>
     <!--used equalizer-->
     <string name="prefs_used_equalizer_title">Equalizer</string>
     <string name="prefs_used_equalizer_summary_on">Gunakan apl equalizer</string>
