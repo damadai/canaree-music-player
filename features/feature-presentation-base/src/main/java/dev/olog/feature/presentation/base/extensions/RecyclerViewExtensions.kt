@@ -25,6 +25,15 @@ val RecyclerView.findLastVisibleItem: Int
         }
     }
 
+fun RecyclerView.scrollToPositionWithOffset(position: Int, offset: Int) {
+    when (val layoutManager = this.layoutManager) {
+        is LinearLayoutManager -> layoutManager.scrollToPositionWithOffset(position, offset)
+        is GridLayoutManager -> layoutManager.scrollToPositionWithOffset(position, offset)
+        null -> throw IllegalArgumentException("layout manager not set")
+        else -> throw IllegalArgumentException("invalid layout manager type=${layoutManager::class.java.canonicalName}")
+    }
+}
+
 suspend fun RecyclerView.awaitAnimationEnd() {
     while (itemAnimator?.isRunning == true) {
         awaitFrame()

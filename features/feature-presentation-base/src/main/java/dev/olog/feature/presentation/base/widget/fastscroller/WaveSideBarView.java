@@ -31,7 +31,7 @@ public class WaveSideBarView extends View {
     protected OnTouchLetterChangeListener listener;
 
     @NonNull
-    protected static final List<String> LETTERS = Arrays.asList("#","A","B","C","D","E","F","G","H","I","J","K","L","M",
+    public static final List<String> LETTERS = Arrays.asList("#","A","B","C","D","E","F","G","H","I","J","K","L","M",
             "N","O","P","Q","R","S","T","U","V","W","X","Y","Z", "?");
 
     protected List<String> mLetters;

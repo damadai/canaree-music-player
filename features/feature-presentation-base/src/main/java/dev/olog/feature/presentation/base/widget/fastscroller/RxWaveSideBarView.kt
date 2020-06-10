@@ -61,7 +61,7 @@ class RxWaveSideBarView(
         return@withContext letters
     }
 
-    private fun updateLetters(letters: List<String>){
+    fun updateLetters(letters: List<String>){
         this.mLetters = letters
         invalidate()
     }
