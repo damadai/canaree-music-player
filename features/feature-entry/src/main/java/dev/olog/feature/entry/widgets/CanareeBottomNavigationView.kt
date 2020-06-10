@@ -10,8 +10,6 @@ import dev.olog.feature.presentation.base.prefs.CommonPreferences
 import dev.olog.navigation.Navigator
 import dev.olog.navigation.screens.BottomNavigationPage
 import dev.olog.navigation.screens.FragmentScreen
-import dev.olog.navigation.screens.LibraryPage
-import dev.olog.shared.throwNotHandled
 import javax.inject.Inject
 
 internal class CanareeBottomNavigationView(
@@ -38,11 +36,10 @@ internal class CanareeBottomNavigationView(
 
         setOnNavigationItemSelectedListener { menu ->
             val navigationPage = menu.itemId.toBottomNavigationPage()
-            val libraryPage = preferences.getLastLibraryPage()
             saveLastPage(navigationPage)
             navigator.bottomNavigate(
                 findActivity(),
-                navigationPage.toScreen(libraryPage)
+                navigationPage.toScreen()
             )
             true
         }
@@ -53,17 +50,13 @@ internal class CanareeBottomNavigationView(
         setOnNavigationItemSelectedListener(null)
     }
 
-    private fun BottomNavigationPage.toScreen(libraryPage: LibraryPage): FragmentScreen {
+    private fun BottomNavigationPage.toScreen(): FragmentScreen {
         return when (this){
-            BottomNavigationPage.LIBRARY -> {
-                when(libraryPage){
-                    LibraryPage.TRACKS -> FragmentScreen.LIBRARY_TRACKS
-                    LibraryPage.PODCASTS -> FragmentScreen.LIBRARY_PODCAST
-                }
-            }
+            BottomNavigationPage.HOME -> FragmentScreen.HOME
+            BottomNavigationPage.LIBRARY -> FragmentScreen.LIBRARY
             BottomNavigationPage.SEARCH -> FragmentScreen.SEARCH
+            BottomNavigationPage.PLAYLISTS -> FragmentScreen.PLAYLISTS
             BottomNavigationPage.QUEUE -> FragmentScreen.QUEUE
-            else -> throwNotHandled(this)
         }
     }
 
@@ -73,8 +66,7 @@ internal class CanareeBottomNavigationView(
 
     fun navigateToLastPage() {
         val navigationPage = preferences.getLastBottomViewPage()
-        val libraryPage = preferences.getLastLibraryPage()
-        navigator.bottomNavigate(findActivity(), navigationPage.toScreen(libraryPage))
+        navigator.bottomNavigate(findActivity(), navigationPage.toScreen())
     }
 
     private fun saveLastPage(page: BottomNavigationPage) {
@@ -82,17 +74,19 @@ internal class CanareeBottomNavigationView(
     }
 
     private fun Int.toBottomNavigationPage(): BottomNavigationPage = when (this) {
-        R.id.navigation_home -> BottomNavigationPage.LIBRARY
+        R.id.navigation_home -> BottomNavigationPage.HOME
         R.id.navigation_library -> BottomNavigationPage.LIBRARY
         R.id.navigation_search -> BottomNavigationPage.SEARCH
-        R.id.navigation_playlists -> BottomNavigationPage.LIBRARY
+        R.id.navigation_playlists -> BottomNavigationPage.PLAYLISTS
         R.id.navigation_queue -> BottomNavigationPage.QUEUE
         else -> throw IllegalArgumentException("invalid menu id")
     }
 
     private fun BottomNavigationPage.toMenuId(): Int = when (this) {
-        BottomNavigationPage.LIBRARY -> R.id.navigation_home
+        BottomNavigationPage.HOME -> R.id.navigation_home
+        BottomNavigationPage.LIBRARY -> R.id.navigation_library
         BottomNavigationPage.SEARCH -> R.id.navigation_search
+        BottomNavigationPage.PLAYLISTS -> R.id.navigation_playlists
         BottomNavigationPage.QUEUE -> R.id.navigation_queue
     }
 

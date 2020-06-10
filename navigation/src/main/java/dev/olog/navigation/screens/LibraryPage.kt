@@ -1,6 +1,14 @@
 package dev.olog.navigation.screens
 
 enum class LibraryPage {
-    TRACKS,
-    PODCASTS
+    LIBRARY_FOLDERS,
+    LIBRARY_PLAYLISTS,
+    LIBRARY_TRACKS,
+    LIBRARY_ALBUMS,
+    LIBRARY_ARTISTS,
+    LIBRARY_GENRE,
+
+    LIBRARY_PODCAST,
+    LIBRARY_PODCAST_AUTHORS,
+    LIBRARY_PODCAST_PLAYLISTS
 }
