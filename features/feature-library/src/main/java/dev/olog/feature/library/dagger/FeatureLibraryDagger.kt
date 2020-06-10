@@ -17,13 +17,9 @@ class FeatureLibraryDagger {
     @Module
     abstract class AppModule {
 
-        @ContributesAndroidInjector
+        @ContributesAndroidInjector(modules = [HomeFragmentModule::class])
         @FeatureScope
-        internal abstract fun provideCategoriesFragment(): LibraryFragment
-
-        @ContributesAndroidInjector(modules = [TabFragmentModule::class])
-        @FeatureScope
-        internal abstract fun provideTabFragment(): TabFragment
+        internal abstract fun provideHomeFragment(): HomeFragment
 
         @ContributesAndroidInjector(modules = [FolderTreeFragmentModule::class])
         @FeatureScope
