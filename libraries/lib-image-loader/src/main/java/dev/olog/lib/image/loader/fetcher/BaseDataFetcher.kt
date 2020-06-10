@@ -68,7 +68,6 @@ abstract class BaseDataFetcher(
                 // don't log
                 callback.onLoadFailed(RuntimeException(ex))
             } catch (ex: Exception) {
-                Timber.w(ex)
                 callback.onLoadFailed(RuntimeException(ex))
             }
         }
