@@ -12,10 +12,7 @@ import dev.olog.feature.presentation.base.model.DisplayableItem
 import dev.olog.shared.doIf
 import dev.olog.shared.startWith
 import dev.olog.shared.startWithIfNotEmpty
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 internal class TabDataProvider @Inject constructor(
@@ -41,29 +38,17 @@ internal class TabDataProvider @Inject constructor(
         // songs
         TabCategory.FOLDERS -> getFolders()
         TabCategory.PLAYLISTS -> getPlaylist()
-        TabCategory.SONGS -> trackGateway.observeAllTracks().map {
-            it.map { it.toTabDisplayableItem() }.startWithIfNotEmpty(headers.shuffleHeader)
-        }
+        TabCategory.SONGS -> emptyFlow()
         TabCategory.ALBUMS -> getAlbums()
         TabCategory.ARTISTS -> getArtists()
         TabCategory.GENRES -> getGenres()
-        TabCategory.RECENTLY_ADDED_ALBUMS -> albumGateway.observeRecentlyAdded().mapListItem { it.toTabLastPlayedDisplayableItem() }
-        TabCategory.RECENTLY_ADDED_ARTISTS -> artistGateway.observeRecentlyAdded().mapListItem {
-            it.toTabLastPlayedDisplayableItem(
-                resources
-            )
-        }
-        TabCategory.LAST_PLAYED_ALBUMS -> albumGateway.observeLastPlayed().mapListItem { it.toTabLastPlayedDisplayableItem() }
-        TabCategory.LAST_PLAYED_ARTISTS -> artistGateway.observeLastPlayed().mapListItem {
-            it.toTabLastPlayedDisplayableItem(
-                resources
-            )
-        }
+        TabCategory.RECENTLY_ADDED_ALBUMS -> emptyFlow()
+        TabCategory.RECENTLY_ADDED_ARTISTS -> emptyFlow()
+        TabCategory.LAST_PLAYED_ALBUMS -> emptyFlow()
+        TabCategory.LAST_PLAYED_ARTISTS -> emptyFlow()
         // podcasts
         TabCategory.PODCASTS_PLAYLIST -> getPodcastPlaylist()
-        TabCategory.PODCASTS -> trackGateway.observeAllPodcasts().map {
-            it.map { it.toTabDisplayableItem() }
-        }
+        TabCategory.PODCASTS -> emptyFlow()
         TabCategory.PODCASTS_AUTHORS -> getPodcastArtists()
         TabCategory.RECENTLY_ADDED_PODCAST_ARTISTS -> podcastAuthorGateway.observeRecentlyAdded().mapListItem {
             it.toTabLastPlayedDisplayableItem(
