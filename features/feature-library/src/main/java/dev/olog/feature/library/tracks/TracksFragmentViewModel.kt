@@ -3,6 +3,7 @@ package dev.olog.feature.library.tracks
 import androidx.lifecycle.ViewModel
 import dev.olog.domain.entity.sort.SortEntity
 import dev.olog.domain.entity.track.Song
+import dev.olog.domain.gateway.podcast.PodcastGateway
 import dev.olog.domain.gateway.track.TrackGateway
 import dev.olog.domain.prefs.SortPreferences
 import dev.olog.domain.schedulers.Schedulers
@@ -19,7 +20,8 @@ internal class TracksFragmentViewModel @Inject constructor(
     isPodcast: Boolean,
     schedulers: Schedulers,
     trackGateway: TrackGateway,
-    private val appPreferencesUseCase: SortPreferences
+    private val appPreferencesUseCase: SortPreferences,
+    podcastGateway: PodcastGateway
 ) : ViewModel() {
 
     val data: Flow<List<TracksModel>> = if (isPodcast) {
@@ -34,6 +36,11 @@ internal class TracksFragmentViewModel @Inject constructor(
     val sidebarLetters: Flow<List<String>> = data.map {
         generateLetters(it)
     }.flowOn(schedulers.cpu)
+
+    val podcastPositions = podcastGateway.observeAllCurrentPositions()
+        .map {
+            it.groupBy { it.id }.mapValues { it.value[0].position.toInt() }
+        }.flowOn(schedulers.cpu)
 
     private fun Song.toTabDisplayableItem(): TracksModel {
         return TracksModel.Item(

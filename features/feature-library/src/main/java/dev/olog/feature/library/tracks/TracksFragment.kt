@@ -77,6 +77,12 @@ internal class TracksFragment : BaseFragment() {
         } else {
             R.layout.item_track
         }
+
+        if (isPodcast) {
+            viewModel.podcastPositions
+                .onEach { adapter.updatePodcastPositions(it) }
+                .launchIn(viewLifecycleOwner.lifecycleScope)
+        }
     }
 
     override fun onResume() {
