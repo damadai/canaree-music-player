@@ -1,3 +1,15 @@
+include ':lint'
+include ':data:data-local'
+include ':flavors:flavor-full'
+include ':shared:shared-components'
+include ':shared:shared'
+include ':navigation'
+include ':domain'
+include ':features:feature-queue'
+include ':features:feature-search'
+include ':features:feature-library'
+include ':features:feature-home'
+include ':features:feature-entry'
 rootProject.name = "Canaree"
 
 include ':app'

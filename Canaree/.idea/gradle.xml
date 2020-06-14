@@ -11,6 +11,23 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/data-local" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/feature-entry" />
+            <option value="$PROJECT_DIR$/features/feature-home" />
+            <option value="$PROJECT_DIR$/features/feature-library" />
+            <option value="$PROJECT_DIR$/features/feature-queue" />
+            <option value="$PROJECT_DIR$/features/feature-search" />
+            <option value="$PROJECT_DIR$/flavors" />
+            <option value="$PROJECT_DIR$/flavors/flavor-full" />
+            <option value="$PROJECT_DIR$/lint" />
+            <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/shared/shared" />
+            <option value="$PROJECT_DIR$/shared/shared-components" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
